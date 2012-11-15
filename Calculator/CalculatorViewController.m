@@ -23,6 +23,7 @@
 @synthesize userIsInTheMiddleOfEnteringANumber =_userIsInTheMiddleOfEnteringANumber;
 @synthesize periodEntered = _periodEntered;
 @synthesize brain = _brain;
+@synthesize history = _history;
 
 // Personalized Getter 
 -(CalculatorBrain *)brain
@@ -57,6 +58,7 @@
     self.display.text = [[NSNumber numberWithInt:0] stringValue]; 
     self.userIsInTheMiddleOfEnteringANumber = NO;
     [self.brain clearOperation];
+    self.history.text = @"";
 }
 
 - (IBAction)operationPressed:(UIButton *)sender 
@@ -67,19 +69,20 @@
     NSString *operation = [sender currentTitle]; 
     double result = [self.brain performOperation:operation];
     self.display.text = [NSString stringWithFormat:@"%.2f", result];
-}
-
-- (IBAction)piPressed:(UIButton *)sender 
-{
-    self.display.text = [NSString stringWithFormat:@"%.2f", 3.14]; 
-    [self enterPressed];
+    NSString *operationString = [operation stringByAppendingFormat:@" "];
+    self.history.text = [self.history.text stringByAppendingFormat:operationString];
 }
 
 - (IBAction)enterPressed 
 {
     [self.brain pushOperand:[self.display.text doubleValue]];
+    NSString *stringOnDisplay = [self.display.text stringByAppendingFormat:@" "];
+    if ( self.userIsInTheMiddleOfEnteringANumber) {
+        self.history.text = [self.history.text stringByAppendingString:stringOnDisplay]; 
+    }
     self.userIsInTheMiddleOfEnteringANumber = NO; 
     self.periodEntered = NO; 
+    
 }
 
 

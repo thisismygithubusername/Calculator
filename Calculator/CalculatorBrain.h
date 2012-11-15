@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
+extern const double PI;
 @interface CalculatorBrain : NSObject
 
 -(void)pushOperand:(double)operand;
 -(double)performOperation:(NSString *)operation;
--(void)clearOperation; 
+-(void)clearOperation;
+
+@property (readonly) id program;
++(double)runProgram:(id) program; 
++(NSString *)descriptionOfProgram:(id)program;
+
 
 @end

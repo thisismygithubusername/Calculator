@@ -88,13 +88,13 @@
 		CF5A5BD81649E39F0088FD2F /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				CF5A5BE11649E39F0088FD2F /* CalculatorAppDelegate.h */,
 				CF0090BF164F2BE200F3AF69 /* GlowCircleButton.png */,
 				CF0090C1164F6D0400F3AF69 /* blue arrow left .png */,
-				CF5A5BE21649E39F0088FD2F /* CalculatorAppDelegate.m */,
-				CF5A5BE41649E39F0088FD2F /* MainStoryboard.storyboard */,
 				CF0090C316508B0700F3AF69 /* cutYellowButton.png */,
 				CF0090B8164E0A4600F3AF69 /* tron-style-check-boxes.png */,
+				CF5A5BE11649E39F0088FD2F /* CalculatorAppDelegate.h */,
+				CF5A5BE21649E39F0088FD2F /* CalculatorAppDelegate.m */,
+				CF5A5BE41649E39F0088FD2F /* MainStoryboard.storyboard */,
 				CF5A5BEF164C6A640088FD2F /* CalculatorBrain.h */,
 				CF5A5BF0164C6A640088FD2F /* CalculatorBrain.m */,
 				CF5A5BE71649E39F0088FD2F /* CalculatorViewController.h */,
